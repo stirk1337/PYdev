@@ -54,7 +54,11 @@ ROOT_URLCONF = 'PYdev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['index/templates'],
+        'DIRS': ['index/templates',
+                 'skills/templates',
+                 'geography/templates',
+                 'last/templates',
+                 'demand/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
