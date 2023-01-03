@@ -6,5 +6,26 @@
 
 {% block content %}
 <h1>Python программист</h1>
-<p>Очень востребован</p>
+
+<h1>Аналитика по зарплатам и городам для профессии {{ prof }}</h1>
+    <h2>Статистика по годам</h2>
+    <table>
+      <tr>
+        <th>Год</th>
+          <th>Средняя зарплата</th>
+        <th>Средняя зарплата - {{ prof }}</th>
+        <th>Количество вакансий</th>
+          <th>Количество вакансий - {{ prof }}</th>
+      </tr>
+        {% for item in data %}
+      <tr>
+        <td>{{ item.year }}</td>
+        <td>{{ item.salary }}</td>
+        <td>{{ item.salary_by_prof }}</td>
+        <td>{{ item.count }}</td>
+        <td>{{ item.count_by_prof }}</td>
+      </tr>
+        {% endfor %}
+    </table>
+
 {% endblock %}
