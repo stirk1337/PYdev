@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Salary, Picture, Proportion
 
-# Register your models here.
+admin.site.register(Salary)
+admin.site.register(Proportion)
+admin.site.register(Picture)
