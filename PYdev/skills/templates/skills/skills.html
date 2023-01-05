@@ -5,6 +5,36 @@
 {% endblock %}
 
 {% block content %}
-<h1>Python программист</h1>
-<p>Навыки!/p>
+
+<h2>Топ навыков за 2017-2022 год</h2>
+<table>
+    <tr>
+        <th>Год</th>
+        <th>Навык 1</th>
+        <th>Навык 2</th>
+        <th>Навык 3</th>
+        <th>Навык 4</th>
+        <th>Навык 5</th>
+        <th>Навык 6</th>
+        <th>Навык 7</th>
+        <th>Навык 8</th>
+        <th>Навык 9</th>
+        <th>Навык 10</th>
+    </tr>
+    {% for item in skills %}
+    <tr>
+        <td>{{ item.year }}</td>
+        <td>{{ item.skill1 }} ({{ item.skill1_count }})</td>
+        <td>{{ item.skill2 }} ({{ item.skill2_count }})</td>
+        <td>{{ item.skill3 }} ({{ item.skill3_count }})</td>
+        <td>{{ item.skill4 }} ({{ item.skill4_count }})</td>
+        <td>{{ item.skill5 }} ({{ item.skill5_count }})</td>
+        <td>{{ item.skill6 }} ({{ item.skill6_count }})</td>
+        <td>{{ item.skill7 }} ({{ item.skill7_count }})</td>
+        <td>{{ item.skill8 }} ({{ item.skill8_count }})</td>
+        <td>{{ item.skill9 }} ({{ item.skill9_count }})</td>
+        <td>{{ item.skill10 }} ({{ item.skill10_count }})</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
