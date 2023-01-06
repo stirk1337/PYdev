@@ -5,6 +5,31 @@
 {% endblock %}
 
 {% block content %}
-<h1>Python программист</h1>
-<p>Хедхантер/p>
+<h2>Последние вакансии</h2>
+<table>
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+        <th>Навыки</th>
+        <th>Компания</th>
+        <th>Оклад от</th>
+        <th>Оклад до</th>
+        <th>Валюта</th>
+        <th>Название региона</th>
+        <th>Дата публикации</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.skills }}</td>
+        <td>{{ item.employer }}</td>
+        <td>{{ item.salary_from }}</td>
+        <td>{{ item.salary_to }}</td>
+        <td>{{ item.salary_currency }}</td>
+        <td>{{ item.area }}</td>
+        <td>{{ item.published_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
