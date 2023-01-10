@@ -10,7 +10,7 @@ class Text(models.Model):
 
 
 class Picture(models.Model):
-    image = models.ImageField(upload_to='geography/static/geography/img', null=True, blank=True)
+    image = models.ImageField(upload_to='index/static/index/img', null=True, blank=True)
 
     class Meta:
         verbose_name = 'Изображение'

@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from. models import Text, Picture
+from .models import Text, Picture
 
 
 def index(request):
