@@ -1,3 +1,17 @@
 from django.db import models
 
-# Create your models here.
+
+class Text(models.Model):
+    text = models.TextField('Текст')
+
+    class Meta:
+        verbose_name = 'Параграф'
+        verbose_name_plural = 'Параграфы'
+
+
+class Picture(models.Model):
+    image = models.ImageField(upload_to='geography/static/geography/img', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'

@@ -5,6 +5,15 @@
 {% endblock %}
 
 {% block content %}
-<h1>Python программист</h1>
-<p>Может многое</p>
+
+{% for item in data %}
+    <p> {{ item.text }} </p>
+{% endfor %}
+
+
+{% for n in img %}
+    <img src="{{ n.image.url }}"  alt=""/>
+{% endfor %}
+
+
 {% endblock %}
