@@ -5,36 +5,40 @@
 {% endblock %}
 
 {% block content %}
+<h1>Географическая аналитика для профессии {{ prof }}</h1>
+<h2>Статистика по городам</h2>
+<div class="table flex">
+    <table>
+        <tr>
+            <th>Город</th>
+            <th>Уровень зарплат</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.city }}</td>
+            <td>{{ item.value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 
-<table>
-    <tr>
-        <th>Город</th>
-        <th>Уровень зарплат</th>
-    </tr>
-    {% for item in data %}
-    <tr>
-        <td>{{ item.city }}</td>
-        <td>{{ item.value }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
-<table>
-    <tr>
-        <th>Город</th>
-        <th>Доля вакансий</th>
-    </tr>
-    {% for item in data1 %}
-    <tr>
-        <td>{{ item.city }}</td>
-        <td>{{ item.value }}</td>
-    </tr>
-    {% endfor %}
-</table>
-
+    <table>
+        <tr>
+            <th>Город</th>
+            <th>Доля вакансий</th>
+        </tr>
+        {% for item in data1 %}
+        <tr>
+            <td>{{ item.city }}</td>
+            <td>{{ item.value }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
 <h2>Графики</h2>
+{% endblock %}
+
+{% block graf %}
 {% for n in img %}
     <img src="{{ n.image.url }}"  alt=""/>
 {% endfor %}
-
 {% endblock %}

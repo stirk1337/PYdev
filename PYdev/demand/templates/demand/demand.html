@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<h1>Аналитика по зарплатам и городам для профессии {{ prof }}</h1>
+<h1>Аналитика по зарплатам для профессии {{ prof }}</h1>
     <h2>Статистика по годам</h2>
     <table>
       <tr>
@@ -26,8 +26,13 @@
       </tr>
         {% endfor %}
     </table>
-  <h2>Графики</h2>
-  {% for n in img %}
+<h2>Графики</h2>
+{% endblock %}
+
+
+
+{% block graf %}
+{% for n in img %}
     <img src="{{ n.image.url }}"  alt=""/>
-  {% endfor %}
+{% endfor %}
 {% endblock %}

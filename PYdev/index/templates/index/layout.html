@@ -2,18 +2,50 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/index/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <title>{% block title %}{% endblock %}</title>
 </head>
 <header>
-    <a href="/">Главная</a>
-    <a href="/demand">Востребованность</a>
-    <a href="/geography">География</a>
-    <a href="/skills">Навыки</a>
-    <a href="/last">Последние вакансии</a>
+    <nav class="burger_menu">
+        <a class="burger_menu_button">
+            <span class="burger_menu_lines"></span>
+        </a>
+        <ul class="menu_list">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/demand">Востребованность</a></li>
+            <li><a href="/geography">География</a></li>
+            <li><a href="/skills">Навыки</a></li>
+            <li><a href="/last">Последние вакансии</a></li>
+        </ul>
+    </nav>
+    <div class="info flex">
+        <a href="/">
+            <img class src="static/index/img/logo.png" width="180px" height="70px">
+        </a>
+        <h1 class="header_title">программист</h1>
+    </div>
 </header>
 <body>
-    <h1>Python программист</h1>
-    {% block content %}
-    {% endblock %}
+    <div class="info graf">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="graf">
+        {% block graf %}
+        {% endblock %}
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <a href="https://urfu.ru/ru/"><img class="irit_logo" src="static/index/img/IRIT_logo.png"  alt="" width="150px"></a>
+            <p>Мавлютов Рамиль Рустамович</p>
+            <P>РИ-210940, АТ-31</P>
+        </div>
+    </footer>
+     <script type="module" src="/static/index/js/menu.js"></script>
 </body>
 </html>

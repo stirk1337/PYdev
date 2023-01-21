@@ -7,13 +7,17 @@
 {% block content %}
 
 {% for item in data %}
-    <p> {{ item.text }} </p>
+    {% if item.is_header %}
+        <h1> {{ item.text }} </h1>
+    {% else %}
+        <p> {{ item.text }} </p>
+    {% endif %}
+    {% if item.has_picture %}
+    <br>
+    <img src="{{ item.image.url }}" width="500" height="300">э
+    <br>
+    {% endif %}
+    <br>
 {% endfor %}
-
-
-{% for n in img %}
-    <img src="{{ n.image.url }}"  alt=""/>
-{% endfor %}
-
-
 {% endblock %}
+

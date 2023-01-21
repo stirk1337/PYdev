@@ -1,7 +1,4 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
-
-percentage_validators = [MinValueValidator(0.9), MaxValueValidator(100)]
 
 
 class Salary(models.Model):
