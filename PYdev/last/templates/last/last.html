@@ -5,7 +5,23 @@
 {% endblock %}
 
 {% block content %}
-<h2>Последние вакансии</h2>
+
+{% for item in data %}
+    {% if item.type == 1 %}
+        <h1> {{ item.text }} </h1>
+    {% elif item.type == 2 %}
+        <h2> {{ item.text }} </h2>
+    {% else %}
+        <p> {{ item.text }}</p>
+    {% endif %}
+    {% if item.has_picture %}
+    <br>
+    <a href="https://hh.ru"><img src="{{ item.image.url }}" width="100" height="100"></a>
+    <br>
+    {% endif %}
+    <br>
+{% endfor %}
+
 <table>
     <tr>
         <th>Название</th>
@@ -16,9 +32,9 @@
         <th>Оклад до</th>
         <th>Валюта</th>
         <th>Название региона</th>
-        <th>Дата публикации</th>
+        <th>Время публикации (сегодня)</th>
     </tr>
-    {% for item in data %}
+    {% for item in table %}
     <tr>
         <td>{{ item.name }}</td>
         <td>{{ item.description }}</td>

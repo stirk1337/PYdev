@@ -7,10 +7,12 @@
 {% block content %}
 
 {% for item in data %}
-    {% if item.is_header %}
+    {% if item.type == 1 %}
         <h1> {{ item.text }} </h1>
+    {% elif item.type == 2 %}
+        <h2> {{ item.text }} </h2>
     {% else %}
-        <p> {{ item.text }} </p>
+        <p> {{ item.text }}</p>
     {% endif %}
     {% if item.has_picture %}
     <br>

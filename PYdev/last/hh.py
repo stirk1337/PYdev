@@ -30,7 +30,7 @@ def get_hh_ru():
             req.close()
             js = json.loads(data)
             s = js['key_skills']
-            row['description'] = clean(js['description'][:300])
+            row['description'] = clean(js['description'][:150])
             skills = []
             for skill in s:
                 skills.append(skill['name'])
@@ -38,15 +38,16 @@ def get_hh_ru():
             row['skills'] = skills
             row['employer'] = item['employer']['name']
             if item['salary'] is None:
-                row['salary_from'] = 'Не указан'
-                row['salary_to'] = 'Не указан'
-                row['salary_currency'] = 'Не указан'
+                row['salary_from'] = 'None'
+                row['salary_to'] = 'None'
+                row['salary_currency'] = 'None'
             else:
                 row['salary_from'] = item['salary']['from']
                 row['salary_to'] = item['salary']['to']
                 row['salary_currency'] = item['salary']['currency']
             row['area'] = item['area']['name']
-            row['published_at'] = item['published_at']
+            publ = item['published_at'].split('T')[1].split('+')
+            row['published_at'] = publ[0]
             rows.append(row)
             if len(rows) == 10:
                 return rows
