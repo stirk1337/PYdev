@@ -52,4 +52,12 @@
     </tr>
     {% endfor %}
 </table>
+ <h2>Графики</h2>
+{% endblock %}
+
+
+{% block graf %}
+{% for n in img %}
+    <img src="{{ n.image.url }}"  alt=""/>
+{% endfor %}
 {% endblock %}

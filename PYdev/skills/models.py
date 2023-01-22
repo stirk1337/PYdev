@@ -38,3 +38,11 @@ class Skill(models.Model):
     class Meta:
         verbose_name = 'Навык'
         verbose_name_plural = 'Навыки'
+
+
+class Picture(models.Model):
+    image = models.ImageField(upload_to='skills/static/skills/img', null=True, blank=True)
+
+    class Meta:
+        verbose_name = 'Изображение'
+        verbose_name_plural = 'Изображения'
