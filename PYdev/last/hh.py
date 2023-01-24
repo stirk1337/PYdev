@@ -20,7 +20,7 @@ def get_hh_ru():
         req.close()
         js = json.loads(data)
         for item in js['items']:
-            if 'python' not in item['name'] and 'Python' not in item['name']:
+            if 'python' not in item['name'].lower() and 'питон' not in item['name'].lower():
                 continue
             row = {}
             row['name'] = item['name']
